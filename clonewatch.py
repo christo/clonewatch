@@ -54,8 +54,8 @@ ALL_PARSERS = [
 
 # Attempts parsing s using each parser in turn.
 # returns a tuple of dirname, parsed where both are None if parsing failed
-# dirname is equal to hostnameparsed is a tuple of user, repourl
-# # where user is the account name, unique to the repo hosting site
+# dirname is equal to hostname, a root dir for that repo host's local repos.
+# parsed is a tuple of user, repourl where user is the account name on the repo hosting site
 def detect(s):
     detected = False
     i = 0
