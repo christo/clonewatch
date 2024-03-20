@@ -1,8 +1,11 @@
 # Clonewatch
 
-A background script for monitoring the system clipboard for urls recognisable as repo urls and
-automatically cloning that repo into a preconfigured directory tree. Each repo host has
-a root directory under which account name dirs are created with their repos inside.
+Ever wanted to easily clone a bunch of repositories in one session without having to organise
+them into a directory structure by hand?
+
+A background script for monitoring the system clipboard for urls recognisable as git repo urls 
+and automatically cloning that repo into a preconfigured directory tree. Each repo host has
+a root directory under which account name dirs are created with their cloned repos inside.
 
 Currently supports the following repo hosts:
 
@@ -18,6 +21,12 @@ Add your own as required and send me a pull request to add it.
 * Only clones if the clipboard changes
 * Performs a pull if the repo already exists
 * Tested on Linux and MacOS
+
+## Requirements
+
+Uses the python library pyperclilp:
+
+`pip install pyperclip`
 
 ## Usage
 
