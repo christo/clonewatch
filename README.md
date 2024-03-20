@@ -40,5 +40,5 @@ to set this up as two panes in a tmux session.
 
 ## Known Bugs
 
-* [ ] There is a potential race condition which basically never happens for me so I haven't bothered
+* [ ] There is a potential race condition which never happens for me so I haven't bothered
 to fix it.
