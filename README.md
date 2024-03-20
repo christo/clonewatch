@@ -1,6 +1,6 @@
 # Clonewatch
 
-Ever wanted to easily clone a bunch of repositories in one session without having to organise
+Ever wanted to easily clone a bunch of git repositories in one session without having to organise
 them into a directory structure by hand?
 
 A background script for monitoring the system clipboard for urls recognisable as git repo urls 
