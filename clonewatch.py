@@ -136,7 +136,7 @@ def main():
             else:
                 logging.info("fail code {} for {}".format(x.poll(), x.args))
         # remove completed processes
-        gits = [x for x in gits if x.poll() == None]
+        gits = [x for x in gits if x.poll() is None]
         update_console(len(gits), latest)
 
 
