@@ -1,13 +1,17 @@
 #!/usr/bin/env python3.10
 
-# python3.10 used because current python3 is python3.12 
+# continuously watches the system clipboard, aka pastebuffer for git repos
+# and automatically clones them into a specific location
+# if the repo already exists, does a git pull
+# supports several forges (github, gitlab, bitbucket etc.)
+# -l option prints the location of the log file and exits
+
+
+# python3.10 used because current python3 is python3.12
 # which seems to suddenly be managed by brew on my machine
 # after latest upgrade
 # requires pyperclip: pip install pyperclip
 
-# continuously watches the system clipboard, aka pastebuffer for git repos
-# and automatically clones them into a specific location
-# if the repo already exists, does a git pull
 
 from os.path import expanduser
 from subprocess import Popen, PIPE, DEVNULL
