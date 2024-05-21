@@ -28,7 +28,7 @@ import time
 #  (need last pulled data, maybe a poop file?)
 # TODO browser extension integration instead of clipboard transport
 
-# time in seconds between clipboard checks
+# time in seconds between clipboard checks, faster clipboard updates may result in lost urls
 INTERVAL = 1.5
 # root of all checkouts
 REPO_HOME = expanduser("~/src/other/")
