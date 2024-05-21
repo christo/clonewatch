@@ -14,7 +14,7 @@
 
 
 from os.path import expanduser
-from subprocess import Popen, PIPE, DEVNULL
+from subprocess import Popen, DEVNULL
 import logging
 import os
 import pyperclip
