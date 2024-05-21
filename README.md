@@ -3,9 +3,9 @@
 Ever wanted to easily clone a bunch of git repositories in one session without having to organise
 them into a directory structure by hand?
 
-A background script for monitoring the system clipboard for urls recognisable as git repo urls 
-and automatically cloning that repo into a preconfigured directory tree. Each repo host has
-a root directory under which account name dirs are created with their cloned repos inside.
+Clonewatch is a background script that monitors the system clipboard for urls recognisable as git
+repo urls and automatically cloning that repo into a preconfigured directory tree. Each repo host
+has a root directory under which account name dirs are created with their cloned repos inside.
 
 Currently supports the following repo hosts:
 
@@ -30,8 +30,8 @@ Uses the python library pyperclilp:
 
 ## Usage
 
-* Edit the `REPO_HOME` location to the root directory of these clones. 
-* Set the `INTERVAL` to a number of seconds for polling the clipboard.
+* Edit the `REPO_HOME` location to the root directory of these clones. Subdirectories for github.com etc. are created underneath and subdirectories for each user or org under that. This should ensure no name clash occurs.
+* Set the `INTERVAL` to a number of seconds for polling the clipboard. This should be higher frequency than your rate of copying urls. 
 
 The following prints the location of the log file so it can be tailed. This makes it easy
 to set this up as two panes in a tmux session.
@@ -40,5 +40,5 @@ to set this up as two panes in a tmux session.
 
 ## Known Bugs
 
-* [ ] There is a potential race condition which never happens for me so I haven't bothered
-to fix it.
+* There is a potential race condition which never happens for me so I haven't bothered
+  to fix it. 
