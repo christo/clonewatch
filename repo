@@ -29,7 +29,7 @@ else
   spew_repos > "$REPO_INDEX" &
   if [[ $DAYS_OLD > 7 ]]; then
     # black on red for shouting
-    echo -e "\033[41;30m Index age ${DAYS_OLD} days. updating in bg, retry in a min \033[0m"
+    echo -e "\n \033[1;35m Repo index ${DAYS_OLD} days old... updating, retry in 2 mins \033[0m \n" >&2
   fi 
 fi
 
