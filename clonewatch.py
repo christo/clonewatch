@@ -95,11 +95,16 @@ def git_clone(url, repo_dir):
 
 
 def main():
-    # only one optional arg supported:
-    # -l means print the name of the log file and exit
-    if len(sys.argv) > 1 and sys.argv[1] == '-l':
-        print("%s\n" % LOG)
-        return
+    # only optional args supported:
+    if len(sys.argv) > 1: 
+        if sys.argv[1] == '-l':
+            # -l means print the name of the log file and exit
+            print("%s\n" % LOG)
+            return
+        elif sys.argv[1] == '-h':
+            # -h means print the base dir for the repos
+            print("%s\n" % REPO_HOME)
+            return
 
     print("check log file at {}\n".format(LOG))
     logging.basicConfig(filename=LOG, format='%(asctime)s %(levelname)s %(message)s', level=logging.DEBUG)
