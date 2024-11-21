@@ -6,7 +6,7 @@
 
 set -eu
 
-if (tmux has-session -t cw 2>/dev/null); then
+if ( tmux has-session -t cw 2>/dev/null ); then
     tmux attach -t cw
 else
     # create new session named cw
