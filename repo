@@ -1,0 +1,35 @@
+#!/usr/bin/env zsh
+
+REPO_HOME="$HOME/src/other"
+REPO_INDEX="$REPO_HOME/.repos"
+
+
+spew_repos() {
+  for i in "${REPO_HOME}"/*; do 
+    find "$i" -name '.git' -maxdepth 5 -type d \
+      | perl -pe 's/(.*)\.git/$1/' 
+  done
+}
+
+# first time
+if [[ ! -f "$REPO_INDEX" ]]; then 
+  # spew in terminal so we look busy
+  spew_repos | tee "$REPO_INDEX" 
+else
+  # we do have a repo index, how old is it?
+  CURRENT_DATE=$(date +%s)
+  # Use `stat -f %m` on macOS - TODO: what is the linux way?
+  MODIFIED_DATE=$(stat -f %m "$REPO_INDEX") 
+  DAYS_OLD=$(( (CURRENT_DATE - MODIFIED_DATE) / 86400 ))
+
+  # search the index, it's quicker than walking the tree
+  egrep "$@" "$REPO_INDEX"
+  
+  # update the index
+  spew_repos > "$REPO_INDEX" &
+  if [[ $DAYS_OLD > 7 ]]; then
+    # black on red for shouting
+    echo -e "\033[41;30m Index age ${DAYS_OLD} days. updating in bg, retry in a min \033[0m"
+  fi 
+fi
+
