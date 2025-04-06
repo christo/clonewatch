@@ -51,6 +51,8 @@ ALL_PARSERS = [
     (RepoParser("github.com", r'^(?:https://|git@)github\.com:([^/]+)/(.*?)(\.git)?$')),
     (RepoParser("gitlab.com", r'^(?:https://|git@)gitlab\.com:([^/]+)/(.*?)(\.git)?$')),
     (RepoParser("bitbucket.org", r'^(?:git clone )?(?:git@bitbucket.org:)([^/]+)/([^/]+).git$')),
+    # https variant
+    (RepoParser("bitbucket.org", r'^(?:git clone )?(?:https://bitbucket.org/)([^/]+)/([^/]+).git$')),
     (RepoParser("git.sr.ht", r'(?:https://git\.sr\.ht/|git@git\.sr\.ht:)~([^/]+)/([^/]+)')),
     (RepoParser("github.com", r'^https://github\.com/([^/]+)/([^/?]+)'))
 ]
